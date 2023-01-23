@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" media="all" href="index.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <title>Scrowbly</title>
+</head>
+
+<body>
+<div>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <div class="card">
+                <div class="card-body">
+                    <form class="px-5 py-4" onsubmit='calculateScrowblyFee(event)'>
+                        <div class="form-floating mb-5">
+                            <span class="arrow">
+                                <img src="images/select_icon.svg" alt="dropdown arrow">
+                            </span>
+                            <select class="form-select border-0" id="transferMethodSelect"
+                                    aria-label="Floating label select example">
+                                <option value="Credit Card" selected>Credit Card</option>
+                                <option value="ACH">ACH</option>
+                                <option value="Wire Transfer">Wire Transfer</option>
+                            </select>
+                            <label for="transferMethodSelect">Transfer Method</label>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating input-wrapper">
+                                    <span class="arrow">
+                                        <img src="images/select_icon.svg" alt="dropdown arrow">
+                                    </span>
+                                    <select class="form-select border-0" id="currencySelect"
+                                            aria-label="Floating label select example" onchange='changeUnit(event)'>
+                                        <option value="Credit Card" selected id="dollar">USD</option>
+                                        <option value="ACH" id="euro">EURO</option>
+                                        <option value="Wire Transfer" id="gbp">GBP</option>
+                                    </select>
+                                    <label for="currencySelect">Currency</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating input-wrapper">
+                                    <input type="number" class="form-control border-0 deal-input" id="dealInput"
+                                           placeholder="Deal Amount" onkeyup='changeAmount(event)'>
+                                    <label id="dealInputLabel" for="dealInput">Deal Amount</label>
+                                    <span id="dollarUnit" class="unit-icon">$</span>
+                                    <span id="euroUnit" class="d-none unit-icon">€</span>
+                                    <span id="gbpUnit" class="d-none unit-icon">£</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center d-none scrowbly-fee" id="scrowblyFee"></div>
+                        <button class="btn btn-block text-white mt-4 disabled" id="submitBtn">Calculate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

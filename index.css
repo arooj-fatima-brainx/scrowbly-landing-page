@@ -1,0 +1,98 @@
+body {
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+}
+
+input:focus + label, select + label {
+    color: #26546B;
+    padding-left: 20px !important;
+    font-weight: 600 !important;
+    font-size: 14px;
+    opacity: 1 !important;
+    text-transform: uppercase;
+}
+
+input + label {
+    color: #000B1F;
+    font-size: 14px;
+    font-weight: 600 !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+}
+
+#transferMethodSelect {
+    width: 100%;
+}
+
+.deal-input {
+    padding-left: 33px !important;
+}
+
+.card {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 30px #D8DBE180;
+    border: 2px solid #CFD8E380;
+    border-radius: 30px !important;
+}
+
+input, select {
+    height: 70px !important;
+    box-shadow: 0px 2px 4px #0000001A !important;
+    border-radius: 12px !important;
+    padding-left: 20px !important;
+    padding-right: 30px !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.input-wrapper {
+    width: 246px !important;
+}
+
+.form-control {
+    color: #000B1F !important;
+}
+
+.form-select {
+    background-image: none !important;
+}
+
+.unit-icon {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    font-weight: 500;
+}
+
+.scrowbly-fee {
+    font-weight: 600;
+    font-size: 18px;
+    color: #FF4B55;
+}
+
+#submitBtn {
+    background: #1FA7D9 0% 0% no-repeat padding-box;
+    border-radius: 12px;
+    height: 60px;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-body {
+    padding: 50px 0px !important;
+}
+
+.deal-label {
+    color: #26546B !important;
+    opacity: 1 !important;
+}
