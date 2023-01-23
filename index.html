@@ -29,55 +29,109 @@
 </head>
 
 <body>
-<div>
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="text-center">
-            <div class="card">
-                <div class="card-body">
-                    <form class="px-5 py-4" onsubmit='calculateScrowblyFee(event)'>
-                        <div class="form-floating mb-5">
+<!--background-image: url('images/gradient_background.png');-->
+<div style="background: transparent url('images/gradient_background.png') 0% 0% no-repeat padding-box; background-size: cover; padding-left: 70px; padding-right: 70px">
+    <nav class="navbar navbar-expand-lg navbar-light text-white">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <img class="navbar-brand" src="images/scrowbly_header.png" alt="Header Image"/>
+            <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">Buyers/Sellers</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">For Brokers</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">Use Cases</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">What is Scrowbly?</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">Scrowbly Fees</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">Why Scrowbly</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link nav-item-text text-white" href="#">Features</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row justify-content-between align-items-center" style="margin-top: 79px">
+        <div class="col-md-6">
+            <div class="heading1 text-white mb-5" style="max-width: 300px">Transact With Confidence.</div>
+            <form>
+                <input type="text" class="waitlist-input border-0" placeholder="Name">
+                <input type="text" class="waitlist-input border-0 mt-3" placeholder="Email">
+                <div class="mt-5">
+                    <button type="submit" class="waitlist-btn">Join Waitlist</button>
+                </div>
+            </form>
+            <div class="waitlist-description text-white">
+                Join our waitlist, Scrowbly is in Beta testing. We'll be gradually opening up to new users over the
+                coming months
+            </div>
+        </div>
+        <div class="col-md-6" style="flex-basis: content">
+            <img src="images/mobile.png" style="padding-right: 70px;">
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="action-btn text-center"><img src="images/action_btn.png" width="26" height="26"><span
+                class="ms-2">Scrowbly in action</span></button>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <div class="card">
+            <div class="card-body">
+                <form class="px-5 py-4" onsubmit='calculateScrowblyFee(event)'>
+                    <div class="form-floating mb-5">
                             <span class="arrow">
                                 <img src="images/select_icon.svg" alt="dropdown arrow">
                             </span>
-                            <select class="form-select border-0" id="transferMethodSelect"
-                                    aria-label="Floating label select example">
-                                <option value="Credit Card" selected>Credit Card</option>
-                                <option value="ACH">ACH</option>
-                                <option value="Wire Transfer">Wire Transfer</option>
-                            </select>
-                            <label for="transferMethodSelect">Transfer Method</label>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <div class="form-floating input-wrapper">
+                        <select class="form-select border-0 calculator-select" id="transferMethodSelect"
+                                aria-label="Floating label select example">
+                            <option value="Credit Card" selected>Credit Card</option>
+                            <option value="ACH">ACH</option>
+                            <option value="Wire Transfer">Wire Transfer</option>
+                        </select>
+                        <label for="transferMethodSelect">Transfer Method</label>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-floating input-wrapper">
                                     <span class="arrow">
                                         <img src="images/select_icon.svg" alt="dropdown arrow">
                                     </span>
-                                    <select class="form-select border-0" id="currencySelect"
-                                            aria-label="Floating label select example" onchange='changeUnit(event)'>
-                                        <option value="Credit Card" selected id="dollar">USD</option>
-                                        <option value="ACH" id="euro">EURO</option>
-                                        <option value="Wire Transfer" id="gbp">GBP</option>
-                                    </select>
-                                    <label for="currencySelect">Currency</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating input-wrapper">
-                                    <input type="number" class="form-control border-0 deal-input" id="dealInput"
-                                           placeholder="Deal Amount" onkeyup='changeAmount(event)'>
-                                    <label id="dealInputLabel" for="dealInput">Deal Amount</label>
-                                    <span id="dollarUnit" class="unit-icon">$</span>
-                                    <span id="euroUnit" class="d-none unit-icon">€</span>
-                                    <span id="gbpUnit" class="d-none unit-icon">£</span>
-                                </div>
+                                <select class="form-select border-0 calculator-select" id="currencySelect"
+                                        aria-label="Floating label select example" onchange='changeUnit(event)'>
+                                    <option value="Credit Card" selected id="dollar">USD</option>
+                                    <option value="ACH" id="euro">EURO</option>
+                                    <option value="Wire Transfer" id="gbp">GBP</option>
+                                </select>
+                                <label for="currencySelect">Currency</label>
                             </div>
                         </div>
-                        <div class="text-center d-none scrowbly-fee" id="scrowblyFee"></div>
-                        <button class="btn btn-block text-white mt-4 disabled" id="submitBtn">Calculate
-                        </button>
-                    </form>
-                </div>
+                        <div class="col-md-6">
+                            <div class="form-floating input-wrapper">
+                                <input type="number" class="form-control border-0 deal-input calculator-input"
+                                       id="dealInput"
+                                       placeholder="Deal Amount" onkeyup='changeAmount(event)'>
+                                <label id="dealInputLabel" for="dealInput">Deal Amount</label>
+                                <span id="dollarUnit" class="unit-icon">$</span>
+                                <span id="euroUnit" class="d-none unit-icon">€</span>
+                                <span id="gbpUnit" class="d-none unit-icon">£</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center d-none scrowbly-fee" id="scrowblyFee"></div>
+                    <button class="btn btn-block text-white mt-4 disabled" id="submitBtn">Calculate
+                    </button>
+                </form>
             </div>
         </div>
     </div>
